@@ -41,6 +41,35 @@ const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512
 writeFileSync('public/favicon.svg', faviconSvg);
 console.log('icon: favicon.svg (vector)');
 
+// Multi-resolution favicon.ico (16/32/48) packed from PNGs of the C.
+// Google's favicon crawler probes /favicon.ico directly, so we ship a real one.
+function buildIco(pngBuffers) {
+  const count = pngBuffers.length;
+  const header = Buffer.alloc(6);
+  header.writeUInt16LE(0, 0); // reserved
+  header.writeUInt16LE(1, 2); // type 1 = icon
+  header.writeUInt16LE(count, 4);
+  const dir = Buffer.alloc(16 * count);
+  let offset = 6 + 16 * count;
+  const sizes = [16, 32, 48];
+  pngBuffers.forEach((png, i) => {
+    const s = sizes[i];
+    const b = i * 16;
+    dir[b] = s >= 256 ? 0 : s;       // width (0 = 256)
+    dir[b + 1] = s >= 256 ? 0 : s;   // height
+    dir[b + 2] = 0;                  // palette
+    dir[b + 3] = 0;                  // reserved
+    dir.writeUInt16LE(1, b + 4);     // color planes
+    dir.writeUInt16LE(32, b + 6);    // bits per pixel
+    dir.writeUInt32LE(png.length, b + 8);
+    dir.writeUInt32LE(offset, b + 12);
+    offset += png.length;
+  });
+  return Buffer.concat([header, dir, ...pngBuffers]);
+}
+writeFileSync('public/favicon.ico', buildIco([render(iconSvg, 16), render(iconSvg, 32), render(iconSvg, 48)]));
+console.log('icon: favicon.ico (16/32/48)');
+
 for (const [name, size] of [
   ['favicon-32.png', 32],
   ['apple-touch-icon.png', 180],
