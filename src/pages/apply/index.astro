@@ -120,6 +120,7 @@ import '../../styles/apply.css';
 
             <form class="apply-form" id="applyForm" action="/api/apply" method="post" novalidate>
               <div class="form-msg error" id="formError" role="alert"></div>
+              <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
 
               <fieldset>
                 <legend>About you</legend>
@@ -349,7 +350,13 @@ import '../../styles/apply.css';
         if (!form.checkValidity()) { return; } // let native validation show
         e.preventDefault();
         btn.disabled = true; btn.style.opacity = '.7'; btn.textContent = 'Submitting\u2026';
-        fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        var fd = new FormData(form);
+        var payload = {};
+        fd.forEach(function (value, key) {
+          if (key === 'work_types') { (payload.work_types = payload.work_types || []).push(value); }
+          else { payload[key] = value; }
+        });
+        fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
           .then(function (r) { if (!r.ok) throw new Error(); form.style.display = 'none'; ok.style.display = 'block'; ok.scrollIntoView({behavior:'smooth', block:'center'}); })
           .catch(function () { btn.disabled = false; btn.style.opacity = '1'; btn.textContent = 'Submit application'; showError('We could not submit your application just now. Please email hello@cleaningjobs.co.nz or call 0800 737 333.'); });
       });
