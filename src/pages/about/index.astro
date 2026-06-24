@@ -1,6 +1,6 @@
 ---
-// Homepage — ported verbatim from cleaningjobs-home_3_1.html (pixel-for-pixel).
-import '../styles/global.css';
+// about — ported from about.html (pixel-for-pixel).
+import '../../styles/about.css';
 ---
 <!DOCTYPE html>
 <html lang="en-NZ">
@@ -8,64 +8,88 @@ import '../styles/global.css';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Cleaning Jobs NZ | Apply Once, Become Eligible for Work</title>
-  <meta name="description" content="Apply once for cleaning jobs across New Zealand. Suitable applicants complete Spruce onboarding and training, and become eligible for residential and commercial work allocation." />
-  <link rel="canonical" href="https://cleaningjobs.co.nz/" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#f7f5f0" />
-
+  
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+<title>About | Cleaning Jobs NZ</title>
+  <meta name="description" content="Cleaning Jobs is the recruitment and onboarding arm of The Spruce Company in New Zealand. Apply once and become eligible for suitable cleaning work." />
+  <link rel="canonical" href="https://cleaningjobs.co.nz/about/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#f7f5f0" />
 
-  <meta property="og:title" content="Cleaning Jobs NZ | Apply Once, Become Eligible for Work" />
-  <meta property="og:description" content="Apply once for cleaning jobs across New Zealand. Suitable applicants complete Spruce onboarding and training, and become eligible for residential and commercial work allocation." />
-  <meta property="og:image" content="https://cleaningjobs.co.nz/og/home.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Cleaning Jobs — the recruitment arm of the Spruce cleaning network." />
-  <meta property="og:url" content="https://cleaningjobs.co.nz/" />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_NZ" />
   <meta property="og:site_name" content="CleaningJobs" />
+  <meta property="og:locale" content="en_NZ" />
+  <meta property="og:title" content="About | Cleaning Jobs NZ" />
+  <meta property="og:description" content="Cleaning Jobs is the recruitment and onboarding arm of The Spruce Company in New Zealand. Apply once and become eligible for suitable cleaning work." />
+  <meta property="og:url" content="https://cleaningjobs.co.nz/about/" />
+  <meta property="og:image" content="https://cleaningjobs.co.nz/og/home.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cleaning Jobs NZ | Apply Once, Become Eligible for Work" />
-  <meta name="twitter:description" content="Apply once for cleaning jobs across New Zealand. Suitable applicants complete Spruce onboarding and training, and become eligible for residential and commercial work allocation." />
+  <meta name="twitter:title" content="About | Cleaning Jobs NZ" />
+  <meta name="twitter:description" content="Cleaning Jobs is the recruitment and onboarding arm of The Spruce Company in New Zealand. Apply once and become eligible for suitable cleaning work." />
   <meta name="twitter:image" content="https://cleaningjobs.co.nz/og/home.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
+<script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Cleaning Jobs NZ",
+    "description": "Cleaning Jobs is the recruitment and onboarding arm of The Spruce Company in New Zealand.",
+    "url": "https://cleaningjobs.co.nz/about/"
+  }
+  </script>
   <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://cleaningjobs.co.nz/#organization",
-    "name": "CleaningJobs",
+    "name": "Cleaning Jobs",
     "url": "https://cleaningjobs.co.nz/",
-    "logo": { "@type": "ImageObject", "url": "https://cleaningjobs.co.nz/logo.png", "width": 512, "height": 512 },
-    "description": "The recruitment and onboarding arm of the Spruce cleaning network in New Zealand. Cleaners apply once; suitable applicants complete onboarding and training to the Spruce standard and become eligible for residential and commercial work allocation.",
-    "parentOrganization": { "@type": "Organization", "name": "Spruce", "url": "https://sprucehome.co.nz/" },
-    "areaServed": { "@type": "Country", "name": "New Zealand" },
-    "address": { "@type": "PostalAddress", "streetAddress": "Unit 54/11 Northside Drive, Westgate", "addressLocality": "Auckland", "postalCode": "0814", "addressCountry": "NZ" },
-    "contactPoint": { "@type": "ContactPoint", "telephone": "+64-800-737-333", "email": "hello@cleaningjobs.co.nz", "contactType": "recruitment", "areaServed": "NZ", "availableLanguage": "English" },
-    "sameAs": []
+    "email": "hello@cleaningjobs.co.nz",
+    "telephone": "+64800737333",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Unit 54/11 Northside Drive",
+      "addressLocality": "Westgate",
+      "addressRegion": "Auckland",
+      "postalCode": "0814",
+      "addressCountry": "NZ"
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "The Spruce Company"
+    }
   }
   </script>
   <script is:inline type="application/ld+json">
-  { "@context":"https://schema.org","@type":"WebSite","@id":"https://cleaningjobs.co.nz/#website","name":"CleaningJobs","url":"https://cleaningjobs.co.nz/","description":"Apply once for cleaning jobs across New Zealand. Suitable applicants complete Spruce onboarding and training, and become eligible for residential and commercial work allocation.","inLanguage":"en-NZ","publisher":{"@id":"https://cleaningjobs.co.nz/#organization"} }
-  </script>
-  <script is:inline type="application/ld+json">
-  { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cleaningjobs.co.nz/"}] }
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://cleaningjobs.co.nz/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://cleaningjobs.co.nz/about/"
+      }
+    ]
+  }
   </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <!-- ===== HEADER ===== -->
   <header class="site">
     <div class="wrap nav">
       <a class="brand" href="/" aria-label="Cleaning Jobs home">
@@ -74,9 +98,9 @@ import '../styles/global.css';
       <nav class="nav-links" aria-label="Primary">
         <a href="/apply/">Apply</a>
         <a href="/how-it-works/">How it works</a>
-        <a href="#types">Work types</a>
-        <a href="#faq">FAQ</a>
-        <a href="/about/">About</a>
+        <a href="/#types">Work types</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/about/" aria-current="page">About</a>
       </nav>
       <a class="btn btn-primary nav-cta" href="/apply/">Apply now</a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -87,257 +111,82 @@ import '../styles/global.css';
       <div class="wrap">
         <a class="m-link" href="/apply/">Apply <span class="arr">→</span></a>
         <a class="m-link" href="/how-it-works/">How it works <span class="arr">→</span></a>
-        <a class="m-link" href="#types">Work types <span class="arr">→</span></a>
-        <a class="m-link" href="#faq">FAQ <span class="arr">→</span></a>
-        <a class="m-link" href="/about/">About <span class="arr">→</span></a>
+        <a class="m-link" href="/#types">Work types <span class="arr">→</span></a>
+        <a class="m-link" href="/faq/">FAQ <span class="arr">→</span></a>
+        <a class="m-link" href="/about/" aria-current="page">About <span class="arr">→</span></a>
         <div class="m-apply"><a class="btn btn-primary" href="/apply/">Apply now</a></div>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <!-- ===== HERO ===== -->
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Cleaning work, made clearer</span>
-          <h1>Cleaning jobs in New Zealand, made simple.</h1>
-          <p class="lead">Apply once, complete the Spruce certification process, and become eligible for suitable residential and commercial cleaning work allocation.</p>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="/apply/">Apply now
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a class="btn btn-outline" href="/how-it-works/">See how it works</a>
-          </div>
-          <div class="trust">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Connected to the Spruce standard. Applications reviewed before onboarding.</span>
-          </div>
-        </div>
-
-        <aside class="app-card" aria-label="Application summary">
-          <div class="app-card-head">
-            <div>
-              <div class="t">Your application</div>
-              <div class="s">Five clear steps</div>
-            </div>
-            <span class="badge"><span class="dot" aria-hidden="true"></span> Open</span>
-          </div>
-          <ol>
-            <li><span class="stp">1</span><div><span class="ttl">Apply online</span><span class="det">A short form — takes a few minutes.</span></div></li>
-            <li><span class="stp">2</span><div><span class="ttl">We review your application</span><span class="det">Applications are reviewed individually.</span></div></li>
-            <li><span class="stp">3</span><div><span class="ttl">Complete verification</span><span class="det">Right-to-work and basic checks.</span></div></li>
-            <li><span class="stp">4</span><div><span class="ttl">Train or certify to the Spruce standard</span><span class="det">Short training or assessment.</span></div></li>
-            <li><span class="stp">5</span><div><span class="ttl">Eligible for work allocation</span><span class="det">Matched by location, suitability, and demand.</span></div></li>
-          </ol>
-          <div class="app-card-foot">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Apply once. We&rsquo;ll keep your details on file.</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ===== WHY APPLY — split with benefit rows ===== -->
-    <section class="block tint" id="why">
       <div class="wrap">
-        <div class="why-split">
-          <div class="why-left">
-            <span class="eyebrow">Why Cleaning Jobs</span>
-            <h2>A clearer way into Spruce cleaning work.</h2>
-            <p>Cleaning Jobs gives suitable cleaners one place to apply for Spruce-standard cleaning work. Instead of applying role by role, applicants can be reviewed once and considered for suitable work based on location, demand, availability, certification, and fit.</p>
-          </div>
-          <div class="why-panel">
-            <div class="why-rows">
-              <div class="why-row">
-                <span class="n">01</span>
-                <div>
-                  <h3>One place to apply</h3>
-                  <p>Your details stay on file so you do not need to re-apply for every suitable role.</p>
-                </div>
-              </div>
-              <div class="why-row">
-                <span class="n">02</span>
-                <div>
-                  <h3>Spruce network behind it</h3>
-                  <p>Cleaning Jobs is connected to Spruce residential, commercial, and specialist cleaning work.</p>
-                </div>
-              </div>
-              <div class="why-row">
-                <span class="n">03</span>
-                <div>
-                  <h3>Standards before allocation</h3>
-                  <p>Suitable cleaners know the expectations before work is allocated.</p>
-                </div>
-              </div>
-              <div class="why-row">
-                <span class="n">04</span>
-                <div>
-                  <h3>Matched to suitable work</h3>
-                  <p>Work is considered based on location, demand, suitability, availability, and certification.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <span class="eyebrow">About</span>
+        <h1>The recruitment arm of The Spruce Company.</h1>
+        <p class="lead">Cleaning Jobs is how suitable cleaners apply once and become eligible for Spruce-standard cleaning work across New Zealand.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="/apply/">Apply now <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn btn-outline" href="/how-it-works/">How it works</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== RELIABLE — split with tick list ===== -->
-    <section class="block" id="who">
+    <section class="block tint">
       <div class="wrap">
         <div class="reliable-split">
           <div class="reliable-left">
-            <span class="eyebrow">What we look for</span>
-            <h2>Reliable people do well here.</h2>
-            <p class="callout">Reliability matters more than experience.</p>
-            <p>Experience helps, but reliability, care, and communication matter more. Cleaning is practical work, and the best applicants are people who take pride in doing it properly.</p>
+            <span class="eyebrow">What we are</span>
+            <h2>One clear way into Spruce cleaning work.</h2>
+            <p class="callout">Apply once. Reviewed once. Considered for suitable work.</p>
+            <p>Cleaning Jobs is the recruitment and onboarding arm of The Spruce Company in New Zealand. Instead of applying role by role, suitable cleaners apply through one pathway and are considered for suitable work based on location, demand, availability, certification, and fit.</p>
           </div>
           <div class="tick-panel">
             <div class="tick-list">
-              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">Turns up on time</span></div>
-              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">Notices detail</span></div>
-              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">Communicates clearly</span></div>
-              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">Comfortable with active work</span></div>
-              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">Can follow checklists</span></div>
-              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">Takes pride in the finished clean</span></div>
+              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">One application, kept on file</span></div>
+              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">Onboarding and verification in one process</span></div>
+              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">Training to the Spruce standard</span></div>
+              <div class="tick-row"><span class="check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="lbl">Considered for suitable work allocation</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== WORK TYPES — 3 grouped columns ===== -->
-    <section class="block tint" id="types">
+    <section class="block">
+      <div class="wrap">
+        <div class="why-split">
+          <div class="why-left">
+            <span class="eyebrow">Connected to Spruce</span>
+            <h2>Backed by The Spruce Company.</h2>
+            <p>Cleaning Jobs feeds one consistent pipeline of cleaners into Spruce work, so the network can grow by region without lowering standards. Cleaning services are delivered through The Spruce Company.</p>
+          </div>
+          <div class="why-panel">
+            <div class="why-rows">
+              <div class="why-row"><span class="n">01</span><div><h3>Residential cleaning</h3><p>Day-to-day and one-off cleans for households across New Zealand.</p></div></div>
+              <div class="why-row"><span class="n">02</span><div><h3>Commercial cleaning</h3><p>Recurring and scheduled cleans for offices, retail, and commercial sites.</p></div></div>
+              <div class="why-row"><span class="n">03</span><div><h3>Specialist &amp; trades-adjacent</h3><p>Builders&rsquo; cleans, carpet and upholstery support, and add-on services.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block tint" id="contact">
       <div class="wrap">
         <div class="sec-head">
-          <span class="eyebrow">Work types</span>
-          <h2>The cleaning work you could be allocated</h2>
-          <p>Three areas of work where Spruce-certified cleaners are considered for allocation. The mix depends on demand in your area.</p>
+          <span class="eyebrow">Get in touch</span>
+          <h2>Contact Cleaning Jobs</h2>
+          <p>Questions about applying or your application? Reach out and we&rsquo;ll point you in the right direction.</p>
         </div>
-        <div class="types-groups">
-          <div class="tgroup">
-            <span class="label">Homes</span>
-            <h3>Residential cleaning work</h3>
-            <p class="blurb">Day-to-day and one-off cleans for households across New Zealand.</p>
-            <ul>
-              <li>Residential cleaning</li>
-              <li>Deep cleaning</li>
-              <li>End of tenancy</li>
-            </ul>
-          </div>
-          <div class="tgroup">
-            <span class="label">Business</span>
-            <h3>Office &amp; commercial sites</h3>
-            <p class="blurb">Recurring and scheduled cleans for offices, retail, and commercial sites.</p>
-            <ul>
-              <li>Office cleaning</li>
-              <li>Commercial cleaning</li>
-            </ul>
-          </div>
-          <div class="tgroup">
-            <span class="label">Specialist support</span>
-            <h3>Trades-adjacent &amp; add-on</h3>
-            <p class="blurb">Specialist cleans alongside trades work or as add-on services.</p>
-            <ul>
-              <li>Builders &amp; handover cleans</li>
-              <li>Carpet &amp; upholstery support</li>
-              <li>Window cleaning support</li>
-            </ul>
-          </div>
-        </div>
-        <div class="types-note">
-          Not every work type is available in every area. Allocation depends on demand, suitability, availability, and certification.
+        <div class="contact-grid">
+          <div class="contact-card"><span class="l">Email</span><a href="mailto:hello@cleaningjobs.co.nz">hello@cleaningjobs.co.nz</a></div>
+          <div class="contact-card"><span class="l">Phone</span><a href="tel:+64800737333">0800 737 333</a></div>
+          <div class="contact-card"><span class="l">Postal</span><p>Unit 54/11 Northside Drive,<br>Westgate, Auckland 0814</p></div>
         </div>
       </div>
     </section>
 
-    <!-- ===== SPRUCE STANDARD — split with snapshot panel ===== -->
-    <section class="block" id="standard">
-      <div class="wrap">
-        <div class="standard-split">
-          <div class="standard-left">
-            <span class="eyebrow">The Spruce standard</span>
-            <h2>Certified to <span class="accent">one clear standard.</span></h2>
-            <p>The Spruce standard gives cleaners a clear way to work: training, checklists, practical expectations, quality checks, and consistent service standards across every Spruce job.</p>
-            <span class="badge-row">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Same checklists. Same expectations. Every clean.</span>
-            </span>
-          </div>
-
-          <aside class="snapshot" aria-label="Standard snapshot">
-            <div class="snapshot-head">
-              <span class="l">Standard Snapshot</span>
-              <span class="v">Spruce Training &amp; Standards</span>
-            </div>
-            <ul>
-              <li>
-                <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <div>
-                  <div class="ti">Training pathway</div>
-                  <div class="de">Short onboarding and role-based training before suitable work is allocated.</div>
-                </div>
-              </li>
-              <li>
-                <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <div>
-                  <div class="ti">Room-by-room checklists</div>
-                  <div class="de">Clear scope and expectations for each type of clean.</div>
-                </div>
-              </li>
-              <li>
-                <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <div>
-                  <div class="ti">Photo evidence where required</div>
-                  <div class="de">Proof captured where the job requires it.</div>
-                </div>
-              </li>
-              <li>
-                <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <div>
-                  <div class="ti">Quality review</div>
-                  <div class="de">Work can be reviewed for consistency over time.</div>
-                </div>
-              </li>
-              <li>
-                <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                <div>
-                  <div class="ti">Ongoing consistency</div>
-                  <div class="de">The same expectations across Spruce work.</div>
-                </div>
-              </li>
-            </ul>
-            <div class="snapshot-foot">
-              <span>Spruce Training &amp; Standards</span>
-              <span>Reviewed for consistency</span>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROOF BAND ===== -->
-    <section class="proof-band tint">
-      <div class="wrap">
-        <div class="proof-grid">
-          <div class="proof-image" role="img" aria-label="Two Spruce team members shaking hands after signing a Spruce agreement">
-            <span class="pi-corner"><span class="dot" aria-hidden="true"></span> Spruce network</span>
-          </div>
-          <div class="proof-copy">
-            <h2>Built around training, checklists, and real cleaning standards.</h2>
-            <p>Cleaning Jobs gives Spruce a cleaner pipeline that can grow by region without lowering standards. Suitable cleaners enter through the same application, onboarding, training, and standards pathway.</p>
-            <ul class="proof-points">
-              <li><span class="pp-dot" aria-hidden="true"></span>One cleaner pathway</li>
-              <li><span class="pp-dot" aria-hidden="true"></span>Region-ready recruitment</li>
-              <li><span class="pp-dot" aria-hidden="true"></span>Standards before allocation</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== APPLY CTA — the one dark band ===== -->
     <section class="cta-band" id="apply-cta">
       <div class="wrap">
         <h2>Ready to apply?</h2>
@@ -346,80 +195,13 @@ import '../styles/global.css';
           <a class="btn btn-primary" href="/apply/">Start application
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a class="btn btn-on-dark" href="#faq">Read the FAQ</a>
+          <a class="btn btn-on-dark" href="/faq/">Read the FAQ</a>
         </div>
         <p class="small-note">Work is not guaranteed. Allocation depends on demand, suitability, availability, and certification.</p>
       </div>
     </section>
-
-    <!-- ===== FAQ ===== -->
-    <section class="block faq-block" id="faq">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="eyebrow">Frequently asked questions</span>
-          <h2>Things people ask before applying</h2>
-        </div>
-        <div class="faq-list">
-          <details class="faq-item">
-            <summary>Do I need cleaning experience?
-              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="answer"><p>Experience is preferred but not always required. Reliability, attention to detail, and willingness to follow checklists matter just as much. The Spruce certification process is there to bring you up to speed.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Is work guaranteed?
-              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="answer"><p>No. We don&rsquo;t guarantee a minimum number of jobs. Work depends on location, demand, availability, suitability, and certification. What we offer is a clear, structured process for becoming eligible for it.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Do I need my own transport?
-              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="answer"><p>Transport is often preferred, especially for residential work spread across an area. Some commercial roles may be accessible by public transport. We&rsquo;ll ask about your situation in the application.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Do I need my own equipment?
-              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="answer"><p>It depends on the type of work. Residential cleans often require basic equipment; commercial sites frequently supply their own. The specifics are covered during onboarding.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Can teams apply?
-              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="answer"><p>Yes. You can apply as an individual, a small team, or a cleaning partnership. There&rsquo;s an option to indicate this in the application.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>Is this employment or contractor work?
-              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="answer"><p>The working arrangement varies by role and is confirmed during onboarding. We&rsquo;ll be clear about the arrangement before any work is allocated to you.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>What areas are available?
-              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="answer"><p>Recruitment is demand-led, so availability depends on where there&rsquo;s current demand for work. Apply with your location and we&rsquo;ll let you know if there&rsquo;s a suitable next step in your area.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>What is Spruce certification?
-              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="answer"><p>A short training or assessment against the Spruce standard. It ensures everyone working in the network delivers a consistent quality of clean, with clear checklists and shared expectations.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary>How long does onboarding take?
-              <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="answer"><p>It depends on your experience, availability, and the work types you&rsquo;re applying for. We&rsquo;ll give you an indication after reviewing your application.</p></div>
-          </details>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site">
     <div class="wrap">
       <div class="foot-top">
@@ -434,8 +216,8 @@ import '../styles/global.css';
           <ul>
             <li><a href="/apply/">Apply</a></li>
             <li><a href="/how-it-works/">How it works</a></li>
-            <li><a href="#types">Work types</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/#types">Work types</a></li>
+            <li><a href="/faq/">FAQ</a></li>
             <li><a href="/about/">About</a></li>
           </ul>
         </div>

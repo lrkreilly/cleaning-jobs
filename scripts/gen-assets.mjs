@@ -18,15 +18,28 @@ const render = (svg, width) =>
     .render()
     .asPng();
 
-// ---- Favicon mark: blue rounded square + white "cleaning bubbles" ----
+// ---- Favicon mark: the brand "C" (improved vector of Cleaning (2).png) ----
+// A bold geometric C in brand blue, opening to the right, on a soft rounded
+// square so it stays legible on both light and dark browser tab strips.
+// Built as crisp SVG so it's razor-sharp at every size (32 → 512).
+const C_GLYPH = `<path d="M 374.2 163.6 A 150 150 0 1 0 374.2 348.4"
+    fill="none" stroke="${PRIMARY}" stroke-width="82" stroke-linecap="round"/>`;
+
+// On-tab icon: white rounded square + blue C (matches the supplied blue-on-light mark).
 const iconSvg = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="${PRIMARY}"/>
-  <circle cx="206" cy="214" r="78" fill="#ffffff"/>
-  <circle cx="316" cy="178" r="46" fill="#ffffff" opacity="0.92"/>
-  <circle cx="322" cy="298" r="58" fill="#ffffff" opacity="0.82"/>
-  <circle cx="220" cy="214" r="20" fill="${PRIMARY}" opacity="0.18"/>
+  <rect width="512" height="512" rx="104" fill="#ffffff"/>
+  ${C_GLYPH}
 </svg>`;
+
+// Maskable / standalone scalable favicon (served as /favicon.svg).
+const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="104" fill="#ffffff"/>
+  ${C_GLYPH}
+</svg>
+`;
+writeFileSync('public/favicon.svg', faviconSvg);
+console.log('icon: favicon.svg (vector)');
 
 for (const [name, size] of [
   ['favicon-32.png', 32],
@@ -44,10 +57,8 @@ const ogSvg = `
   <rect width="1200" height="630" fill="${CREAM}"/>
   <rect width="1200" height="14" fill="${ACCENT}"/>
   <g transform="translate(80,96)">
-    <rect width="64" height="64" rx="16" fill="${PRIMARY}"/>
-    <circle cx="26" cy="28" r="13" fill="#fff"/>
-    <circle cx="44" cy="22" r="8" fill="#fff" opacity="0.9"/>
-    <circle cx="44" cy="40" r="10" fill="#fff" opacity="0.82"/>
+    <rect width="64" height="64" rx="16" fill="#ffffff" stroke="#e3e0d8" stroke-width="1.5"/>
+    <path d="M 46.8 20.5 A 18.75 18.75 0 1 0 46.8 43.5" fill="none" stroke="${PRIMARY}" stroke-width="10.25" stroke-linecap="round" transform="translate(0,0)"/>
     <text x="84" y="42" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="${INK}">CleaningJobs</text>
   </g>
   <text x="80" y="300" font-family="Segoe UI, Arial, sans-serif" font-size="40" letter-spacing="3" fill="${MUTED}">CLEANING JOBS · NEW ZEALAND</text>
