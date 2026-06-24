@@ -18,7 +18,7 @@ import '../../styles/apply.css';
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 <title>Apply | Cleaning Jobs NZ</title>
-  <meta name="description" content="Apply once for Spruce-standard cleaning work in New Zealand. Suitable applicants complete onboarding and become eligible for suitable residential and commercial work allocation." />
+  <meta name="description" content="Apply once for Spruce-standard cleaning work in New Zealand. Suitable applicants complete onboarding and become eligible for work allocation." />
   <link rel="canonical" href="https://cleaningjobs.co.nz/apply/" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#f7f5f0" />
@@ -44,13 +44,20 @@ import '../../styles/apply.css';
     "@type": "WebPage",
     "name": "Apply | Cleaning Jobs NZ",
     "description": "Apply once for Spruce-standard cleaning work in New Zealand. Suitable applicants complete onboarding and become eligible for suitable work allocation.",
-    "url": "https://cleaningjobs.co.nz/apply/"
+    "url": "https://cleaningjobs.co.nz/apply/",
+    "@id": "https://cleaningjobs.co.nz/apply/#webpage",
+    "inLanguage": "en-NZ",
+    "isPartOf": { "@id": "https://cleaningjobs.co.nz/#website" },
+    "about": { "@id": "https://cleaningjobs.co.nz/#organization" },
+    "publisher": { "@id": "https://cleaningjobs.co.nz/#organization" },
+    "breadcrumb": { "@id": "https://cleaningjobs.co.nz/apply/#breadcrumb" }
   }
   </script>
   <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://cleaningjobs.co.nz/apply/#breadcrumb",
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -118,7 +125,7 @@ import '../../styles/apply.css';
               <p>We review every application individually and will be in touch if there&rsquo;s a suitable next step. If you need to reach us in the meantime, email <a href="mailto:hello@cleaningjobs.co.nz">hello@cleaningjobs.co.nz</a>.</p>
             </div>
 
-            <form class="apply-form" id="applyForm" action="/api/apply" method="post" novalidate>
+            <form class="apply-form" id="applyForm" action="/api/apply/" method="post" novalidate>
               <div class="form-msg error" id="formError" role="alert"></div>
               <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
 
@@ -279,6 +286,15 @@ import '../../styles/apply.css';
           </ul>
         </div>
         <div class="foot-col">
+          <h4>Locations</h4>
+          <ul>
+            <li><a href="/cleaning-jobs-auckland/">Auckland</a></li>
+            <li><a href="/cleaning-jobs-wellington/">Wellington</a></li>
+            <li><a href="/cleaning-jobs-hamilton/">Hamilton</a></li>
+            <li><a href="/cleaning-jobs-tauranga/">Tauranga</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
           <h4>Contact</h4>
           <ul>
             <li><a href="mailto:hello@cleaningjobs.co.nz">hello@cleaningjobs.co.nz</a></li>
@@ -290,7 +306,6 @@ import '../../styles/apply.css';
           <h4>Legal</h4>
           <ul>
             <li><a href="/legal/#privacy">Privacy</a></li>
-            <li><a href="/legal/">Terms</a></li>
           </ul>
         </div>
       </div>
@@ -344,11 +359,11 @@ import '../../styles/apply.css';
       var btn = document.getElementById('applySubmit');
       function showError(msg) { err.textContent = msg; err.style.display = 'block'; err.scrollIntoView({behavior:'smooth', block:'center'}); }
       form.addEventListener('submit', function (e) {
+        e.preventDefault();
         err.style.display = 'none';
         var checked = form.querySelectorAll('input[name="work_types"]:checked').length;
-        if (checked === 0) { e.preventDefault(); showError('Please choose at least one type of work.'); return; }
-        if (!form.checkValidity()) { return; } // let native validation show
-        e.preventDefault();
+        if (checked === 0) { showError('Please choose at least one type of work.'); return; }
+        if (!form.checkValidity()) { form.reportValidity(); return; }
         btn.disabled = true; btn.style.opacity = '.7'; btn.textContent = 'Submitting\u2026';
         var fd = new FormData(form);
         var payload = {};

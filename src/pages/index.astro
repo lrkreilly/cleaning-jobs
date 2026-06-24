@@ -9,7 +9,7 @@ import '../styles/global.css';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Cleaning Jobs NZ | Apply Once, Become Eligible for Work</title>
-  <meta name="description" content="Apply once for cleaning jobs across New Zealand. Suitable applicants complete Spruce onboarding and training, and become eligible for residential and commercial work allocation." />
+  <meta name="description" content="Apply once for cleaning jobs across New Zealand. Suitable applicants complete Spruce onboarding and become eligible for cleaning work allocation." />
   <link rel="canonical" href="https://cleaningjobs.co.nz/" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#f7f5f0" />
@@ -44,24 +44,47 @@ import '../styles/global.css';
   <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://cleaningjobs.co.nz/#organization",
-    "name": "CleaningJobs",
-    "url": "https://cleaningjobs.co.nz/",
-    "logo": { "@type": "ImageObject", "url": "https://cleaningjobs.co.nz/logo.png", "width": 512, "height": 512 },
-    "description": "The recruitment and onboarding arm of the Spruce cleaning network in New Zealand. Cleaners apply once; suitable applicants complete onboarding and training to the Spruce standard and become eligible for residential and commercial work allocation.",
-    "parentOrganization": { "@type": "Organization", "name": "Spruce", "url": "https://sprucehome.co.nz/" },
-    "areaServed": { "@type": "Country", "name": "New Zealand" },
-    "address": { "@type": "PostalAddress", "streetAddress": "Unit 54/11 Northside Drive, Westgate", "addressLocality": "Auckland", "postalCode": "0814", "addressCountry": "NZ" },
-    "contactPoint": { "@type": "ContactPoint", "telephone": "+64-800-737-333", "email": "hello@cleaningjobs.co.nz", "contactType": "recruitment", "areaServed": "NZ", "availableLanguage": "English" },
-    "sameAs": []
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://cleaningjobs.co.nz/#organization",
+        "name": "Cleaning Jobs",
+        "alternateName": "Cleaning Jobs NZ",
+        "url": "https://cleaningjobs.co.nz/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://cleaningjobs.co.nz/#logo",
+          "url": "https://cleaningjobs.co.nz/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "image": { "@id": "https://cleaningjobs.co.nz/#logo" },
+        "description": "The recruitment and onboarding arm of The Spruce Company in New Zealand. Cleaners apply once; suitable applicants complete onboarding and training to the Spruce standard and become eligible for residential and commercial work allocation.",
+        "parentOrganization": { "@type": "Organization", "name": "The Spruce Company", "@id": "https://sprucehome.co.nz/#business", "url": "https://sprucehome.co.nz/" },
+        "areaServed": { "@type": "Country", "name": "New Zealand" },
+        "address": { "@type": "PostalAddress", "streetAddress": "Unit 54/11 Northside Drive, Westgate", "addressLocality": "Auckland", "postalCode": "0814", "addressCountry": "NZ" },
+        "contactPoint": { "@type": "ContactPoint", "telephone": "+64-800-737-333", "email": "hello@cleaningjobs.co.nz", "contactType": "recruitment", "areaServed": "NZ", "availableLanguage": "English" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cleaningjobs.co.nz/#website",
+        "name": "Cleaning Jobs",
+        "alternateName": "Cleaning Jobs NZ",
+        "url": "https://cleaningjobs.co.nz/",
+        "inLanguage": "en-NZ",
+        "publisher": { "@id": "https://cleaningjobs.co.nz/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://cleaningjobs.co.nz/#webpage",
+        "url": "https://cleaningjobs.co.nz/",
+        "name": "Cleaning Jobs NZ | Apply Once, Become Eligible for Work",
+        "isPartOf": { "@id": "https://cleaningjobs.co.nz/#website" },
+        "about": { "@id": "https://cleaningjobs.co.nz/#organization" },
+        "inLanguage": "en-NZ"
+      }
+    ]
   }
-  </script>
-  <script is:inline type="application/ld+json">
-  { "@context":"https://schema.org","@type":"WebSite","@id":"https://cleaningjobs.co.nz/#website","name":"CleaningJobs","url":"https://cleaningjobs.co.nz/","description":"Apply once for cleaning jobs across New Zealand. Suitable applicants complete Spruce onboarding and training, and become eligible for residential and commercial work allocation.","inLanguage":"en-NZ","publisher":{"@id":"https://cleaningjobs.co.nz/#organization"} }
-  </script>
-  <script is:inline type="application/ld+json">
-  { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cleaningjobs.co.nz/"}] }
   </script>
 </head>
 <body>
@@ -339,6 +362,42 @@ import '../styles/global.css';
       </div>
     </section>
 
+    <!-- ===== LOCATIONS / COVERAGE ===== -->
+    <section class="block" id="locations">
+      <div class="wrap">
+        <div class="coverage-grid">
+          <div class="coverage-left">
+            <span class="eyebrow">Where we recruit</span>
+            <h2>Cleaning jobs by location.</h2>
+            <p>We take applications for Spruce-standard cleaning work across key centres around New Zealand, with live demand shown by area. Don&rsquo;t see your city? Apply anyway and tell us your location.</p>
+            <p class="cov-note"><a href="/apply/">Apply once for work near you →</a></p>
+          </div>
+          <div class="city-list">
+            <a href="/cleaning-jobs-auckland/">
+              <span class="city-name">Auckland</span>
+              <span class="city-meta">All suburbs</span>
+              <span class="city-status"><span class="city-dot" aria-hidden="true"></span>Live</span>
+            </a>
+            <a href="/cleaning-jobs-wellington/">
+              <span class="city-name">Wellington</span>
+              <span class="city-meta">Capital &amp; greater region</span>
+              <span class="city-status"><span class="city-dot" aria-hidden="true"></span>Live</span>
+            </a>
+            <a href="/cleaning-jobs-hamilton/">
+              <span class="city-name">Hamilton</span>
+              <span class="city-meta">Waikato</span>
+              <span class="city-status"><span class="city-dot" aria-hidden="true"></span>Live</span>
+            </a>
+            <a href="/cleaning-jobs-tauranga/">
+              <span class="city-name">Tauranga</span>
+              <span class="city-meta">Bay of Plenty</span>
+              <span class="city-status"><span class="city-dot" aria-hidden="true"></span>Live</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== APPLY CTA — the one dark band ===== -->
     <section class="cta-band" id="apply-cta">
       <div class="wrap">
@@ -436,9 +495,18 @@ import '../styles/global.css';
           <ul>
             <li><a href="/apply/">Apply</a></li>
             <li><a href="/how-it-works/">How it works</a></li>
-            <li><a href="#types">Work types</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/#types">Work types</a></li>
+            <li><a href="/faq/">FAQ</a></li>
             <li><a href="/about/">About</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Locations</h4>
+          <ul>
+            <li><a href="/cleaning-jobs-auckland/">Auckland</a></li>
+            <li><a href="/cleaning-jobs-wellington/">Wellington</a></li>
+            <li><a href="/cleaning-jobs-hamilton/">Hamilton</a></li>
+            <li><a href="/cleaning-jobs-tauranga/">Tauranga</a></li>
           </ul>
         </div>
         <div class="foot-col">
@@ -453,7 +521,6 @@ import '../styles/global.css';
           <h4>Legal</h4>
           <ul>
             <li><a href="/legal/#privacy">Privacy</a></li>
-            <li><a href="/legal/">Terms</a></li>
           </ul>
         </div>
       </div>

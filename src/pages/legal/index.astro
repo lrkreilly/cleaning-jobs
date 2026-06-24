@@ -42,17 +42,22 @@ import '../../styles/legal.css';
 <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "PrivacyPolicy",
+    "@type": "WebPage",
+    "@id": "https://cleaningjobs.co.nz/legal/#webpage",
     "name": "Privacy Policy",
     "url": "https://cleaningjobs.co.nz/legal/",
     "inLanguage": "en-NZ",
-    "publisher": { "@type": "Organization", "name": "Cleaning Jobs", "url": "https://cleaningjobs.co.nz/" }
+    "isPartOf": { "@id": "https://cleaningjobs.co.nz/#website" },
+    "about": { "@id": "https://cleaningjobs.co.nz/#organization" },
+    "publisher": { "@id": "https://cleaningjobs.co.nz/#organization" },
+    "breadcrumb": { "@id": "https://cleaningjobs.co.nz/legal/#breadcrumb" }
   }
   </script>
   <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://cleaningjobs.co.nz/legal/#breadcrumb",
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -63,8 +68,8 @@ import '../../styles/legal.css';
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "About",
-        "item": "https://cleaningjobs.co.nz/about/"
+        "name": "Privacy Policy",
+        "item": "https://cleaningjobs.co.nz/legal/"
       }
     ]
   }
@@ -247,6 +252,15 @@ import '../../styles/legal.css';
           </ul>
         </div>
         <div class="foot-col">
+          <h4>Locations</h4>
+          <ul>
+            <li><a href="/cleaning-jobs-auckland/">Auckland</a></li>
+            <li><a href="/cleaning-jobs-wellington/">Wellington</a></li>
+            <li><a href="/cleaning-jobs-hamilton/">Hamilton</a></li>
+            <li><a href="/cleaning-jobs-tauranga/">Tauranga</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
           <h4>Contact</h4>
           <ul>
             <li><a href="mailto:hello@cleaningjobs.co.nz">hello@cleaningjobs.co.nz</a></li>
@@ -258,7 +272,6 @@ import '../../styles/legal.css';
           <h4>Legal</h4>
           <ul>
             <li><a href="/legal/#privacy">Privacy</a></li>
-            <li><a href="/legal/">Terms</a></li>
           </ul>
         </div>
       </div>

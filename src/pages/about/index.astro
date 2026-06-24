@@ -42,37 +42,22 @@ import '../../styles/about.css';
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
+    "@id": "https://cleaningjobs.co.nz/about/#webpage",
     "name": "About Cleaning Jobs NZ",
     "description": "Cleaning Jobs is the recruitment and onboarding arm of The Spruce Company in New Zealand.",
-    "url": "https://cleaningjobs.co.nz/about/"
-  }
-  </script>
-  <script is:inline type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Cleaning Jobs",
-    "url": "https://cleaningjobs.co.nz/",
-    "email": "hello@cleaningjobs.co.nz",
-    "telephone": "+64800737333",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Unit 54/11 Northside Drive",
-      "addressLocality": "Westgate",
-      "addressRegion": "Auckland",
-      "postalCode": "0814",
-      "addressCountry": "NZ"
-    },
-    "parentOrganization": {
-      "@type": "Organization",
-      "name": "The Spruce Company"
-    }
+    "url": "https://cleaningjobs.co.nz/about/",
+    "inLanguage": "en-NZ",
+    "isPartOf": { "@id": "https://cleaningjobs.co.nz/#website" },
+    "about": { "@id": "https://cleaningjobs.co.nz/#organization" },
+    "publisher": { "@id": "https://cleaningjobs.co.nz/#organization" },
+    "breadcrumb": { "@id": "https://cleaningjobs.co.nz/about/#breadcrumb" }
   }
   </script>
   <script is:inline type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": "https://cleaningjobs.co.nz/about/#breadcrumb",
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -225,6 +210,15 @@ import '../../styles/about.css';
           </ul>
         </div>
         <div class="foot-col">
+          <h4>Locations</h4>
+          <ul>
+            <li><a href="/cleaning-jobs-auckland/">Auckland</a></li>
+            <li><a href="/cleaning-jobs-wellington/">Wellington</a></li>
+            <li><a href="/cleaning-jobs-hamilton/">Hamilton</a></li>
+            <li><a href="/cleaning-jobs-tauranga/">Tauranga</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
           <h4>Contact</h4>
           <ul>
             <li><a href="mailto:hello@cleaningjobs.co.nz">hello@cleaningjobs.co.nz</a></li>
@@ -236,7 +230,6 @@ import '../../styles/about.css';
           <h4>Legal</h4>
           <ul>
             <li><a href="/legal/#privacy">Privacy</a></li>
-            <li><a href="/legal/">Terms</a></li>
           </ul>
         </div>
       </div>

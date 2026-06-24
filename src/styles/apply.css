@@ -749,7 +749,7 @@
     }
 
     @media (min-width: 760px) {
-      .foot-top { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; align-items: start; }
+      .foot-top { grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 40px; align-items: start; }
     }
 
     /* ===== STICKY MOBILE APPLY ===== */
