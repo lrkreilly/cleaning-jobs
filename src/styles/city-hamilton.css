@@ -738,7 +738,7 @@
     .foot-brand .brand-name { color: #fff; }
     .foot-brand .brand-mark { background: rgba(255,255,255,.10); }
     .foot-about { margin-top: 14px; color: var(--on-primary-mu); max-width: 36ch; font-size: .96rem; line-height: 1.6; }
-    .foot-col h4 { color: #fff; font-size: 14px; font-weight: 700; letter-spacing: -0.005em; margin-bottom: 14px; }
+    .foot-col h3 { color: #fff; font-size: 14px; font-weight: 700; letter-spacing: -0.005em; margin-bottom: 14px; }
     .foot-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
     .foot-col a { color: var(--on-primary-mu); text-decoration: none; font-size: .96rem; }
     .foot-col a:hover { color: #fff; }

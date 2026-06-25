@@ -18,4 +18,9 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    // Inline CSS into each page's <head> so it isn't a render-blocking request.
+    // Total CSS is small (~30 KB) so inlining is a clear LCP/FCP win.
+    inlineStylesheets: 'always',
+  },
 });
