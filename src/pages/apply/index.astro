@@ -125,8 +125,10 @@ import '../../styles/apply.css';
             </div>
 
             <form class="apply-form" id="applyForm" action="/api/apply/" method="post" novalidate>
-              <div class="form-msg error" id="formError" role="alert"></div>
+              <div class="form-msg" id="formError" role="alert"></div>
               <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+              <input type="hidden" name="source_referrer" id="sourceReferrer">
+              <input type="hidden" name="source_params" id="sourceParams">
 
               <fieldset>
                 <legend>About you</legend>
@@ -356,7 +358,23 @@ import '../../styles/apply.css';
       var err = document.getElementById('formError');
       var ok = document.getElementById('formSuccess');
       var btn = document.getElementById('applySubmit');
-      function showError(msg) { err.textContent = msg; err.style.display = 'block'; err.scrollIntoView({behavior:'smooth', block:'center'}); }
+      function showError(msg) { err.classList.add('error'); err.textContent = msg; err.style.display = 'block'; err.scrollIntoView({behavior:'smooth', block:'center'}); }
+
+      // Source attribution for the first-party application record.
+      var refField = document.getElementById('sourceReferrer');
+      var paramsField = document.getElementById('sourceParams');
+      if (refField) refField.value = (document.referrer || '').slice(0, 500);
+      if (paramsField) paramsField.value = (location.search || '').slice(0, 500);
+
+      // Preselect the region when the visitor arrived from a city page (?from= or referrer).
+      var regionSelect = document.getElementById('region');
+      if (regionSelect && !regionSelect.value) {
+        var hint = (new URLSearchParams(location.search).get('from') || '') + ' ' + (document.referrer || '');
+        var regionMap = [['auckland', 'Auckland'], ['wellington', 'Wellington'], ['hamilton', 'Waikato'], ['tauranga', 'Bay of Plenty']];
+        for (var i = 0; i < regionMap.length; i++) {
+          if (hint.toLowerCase().indexOf(regionMap[i][0]) !== -1) { regionSelect.value = regionMap[i][1]; break; }
+        }
+      }
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         err.style.display = 'none';

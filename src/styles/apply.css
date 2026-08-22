@@ -822,6 +822,7 @@
     .apply-note { font-size: .82rem; color: var(--muted); line-height: 1.5; }
     .form-msg { display: none; border-radius: var(--radius-sm); padding: 12px 14px; font-size: .9rem; font-weight: 600; }
     .form-msg.error { display: block; background: #fdecec; border: 1px solid #e7b4b4; color: #8a2b2b; }
+    .form-msg:empty { display: none; }
     .form-success { display: none; background: var(--primary-soft); border: 1px solid var(--primary); border-radius: var(--radius); padding: 26px 24px; }
     .form-success h2 { font-size: 1.3rem; color: var(--ink); margin-bottom: 8px; }
     .form-success p { color: var(--text); }
