@@ -192,7 +192,7 @@ Still open: repoint the sprucecleaning.nz Cloudflare redirect (row 57) at
 | # | Input | Feeds |
 |---|---|---|
 | 0 | Vercel env config (`RESEND_API_KEY`, `APPLY_FROM`, `APPLY_TO`) + Resend domain verification — Luke, credentials | Step 0.1 |
-| 1 | Current intake/demand status + who keeps it current | Intake block |
+| 1 | Current intake/demand status + who keeps it current. (W/H/T serviceability confirmed by Luke 2026-08-23; Christchurch timing still open.) | Intake block |
 | 2 | Publishable rates/ranges, or the truthful rate-setting explanation | Pay block, report |
 | 3 | Hours and schedule patterns actually allocated | Hours block |
 | 4 | The real employment/contractor arrangement wording | Arrangement block |
