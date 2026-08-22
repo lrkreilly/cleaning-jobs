@@ -7,6 +7,16 @@
       "has": [{ "type": "host", "value": "www.cleaningjobs.co.nz" }],
       "destination": "https://cleaningjobs.co.nz/$1",
       "permanent": true
+    },
+    {
+      "source": "/about-cleaning-jobs/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/the-benefits-of-becoming-a-cleaner/",
+      "destination": "/faq/",
+      "permanent": true
     }
   ],
   "headers": [
