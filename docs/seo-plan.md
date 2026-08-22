@@ -103,9 +103,12 @@ formulas, no word-count targets.
 
 ## 3. Authority
 
-1. **Spruce contextual links aimed at the Auckland URL** — a hiring section on
-   sprucehome.co.nz's homepage or /about/ linking directly to `/cleaning-jobs-auckland/`, plus
-   link-ifying the plain-text franchise-page mention. Not only a footer credit.
+1. **Spruce contextual links — DONE 2026-08-23** (Luke-approved architecture, Spruce commit
+   `37080a2`): sprucehome.co.nz/work-with-us/ bridge page (complete answer, not a pass-through)
+   linking `/cleaning-jobs-auckland/` and `/apply/`; sitewide footer "Work with Spruce";
+   About-page sentence linking cleaningjobs.co.nz; franchise-page mention link-ified; and an
+   Auckland-only recruiting module on Spruce's Auckland hub (data-gated in `cities.js` — other
+   cities get it only after demand verification). All followed editorial links.
 2. **Independent link acquisition, run as a campaign, not a direction.** It needs: an owner;
    a prospect list (training organisations, employment/community partners such as
    work-readiness programmes and migrant settlement services, industry suppliers, operators,
@@ -198,4 +201,4 @@ Still open: repoint the sprucecleaning.nz Cloudflare redirect (row 57) at
 | 7 | Cleaner testimonials with consent | Testimonials block |
 | 8 | Outcome data access (applications/onboarding/allocation) | Outcomes block, report |
 | 9 | Retention period + legal entity confirmation for the privacy notice | Step 0.4 |
-| 10 | Approval of Spruce link placements/anchors; link-campaign owner and targets | §3 |
+| 10 | ~~Spruce link placements~~ done 2026-08-23; still open: link-campaign owner and targets | §3 |
