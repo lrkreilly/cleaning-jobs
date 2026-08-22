@@ -1,0 +1,37 @@
+# Cleaning Jobs
+
+> Cleaning Jobs (cleaningjobs.co.nz) is the recruitment and onboarding arm of The Spruce Company, a New Zealand cleaning company. It is not a job board: cleaners apply once through a single form (no CV), every application is reviewed individually, and suitable applicants complete verification, training and certification to the Spruce standard before becoming eligible for residential, commercial and specialist cleaning work allocation. Work is not guaranteed; allocation depends on demand, suitability, availability, and certification.
+
+## Key facts
+- What it is: the recruitment and onboarding arm of The Spruce Company (sprucehome.co.nz)
+- How it works: apply once → individual review → verification (right to work in NZ + basic checks) → training and certification to the Spruce standard → eligibility for work allocation
+- Experience: preferred but not always required ("None yet" is accepted in the application)
+- Requirements: the right to work in New Zealand; reliability; attention to detail; transport helps but is not a hard requirement
+- Applicants: individuals, small teams, and cleaning partnerships can apply
+- Locations: Auckland (home base, Westgate), Wellington, Hamilton, Tauranga; applications accepted from other NZ regions
+- Contact: 0800 737 333 · hello@cleaningjobs.co.nz · Unit 54/11 Northside Drive, Westgate, Auckland 0814
+
+## Locations
+- [Cleaning jobs in Auckland](https://cleaningjobs.co.nz/cleaning-jobs-auckland/)
+- [Cleaning jobs in West Auckland](https://cleaningjobs.co.nz/cleaning-jobs-west-auckland/)
+- [Cleaning jobs in South Auckland](https://cleaningjobs.co.nz/cleaning-jobs-south-auckland/)
+- [Cleaning jobs in Wellington](https://cleaningjobs.co.nz/cleaning-jobs-wellington/)
+- [Cleaning jobs in Hamilton](https://cleaningjobs.co.nz/cleaning-jobs-hamilton/)
+- [Cleaning jobs in Tauranga](https://cleaningjobs.co.nz/cleaning-jobs-tauranga/)
+
+## Audiences
+- [Cleaning jobs with no experience](https://cleaningjobs.co.nz/cleaning-jobs-no-experience/)
+- [Part-time cleaning jobs in Auckland](https://cleaningjobs.co.nz/part-time-cleaning-jobs-auckland/)
+
+## Guides
+- [How to become a cleaner in New Zealand](https://cleaningjobs.co.nz/how-to-become-a-cleaner/)
+
+## Company
+- [How it works](https://cleaningjobs.co.nz/how-it-works/)
+- [About Cleaning Jobs](https://cleaningjobs.co.nz/about/)
+- [FAQ](https://cleaningjobs.co.nz/faq/)
+- [Apply](https://cleaningjobs.co.nz/apply/)
+- [Privacy policy](https://cleaningjobs.co.nz/legal/)
+
+## Full content
+- [Full site text for LLMs](https://cleaningjobs.co.nz/llms-full.txt) — every page's readable content in one file (auto-generated each build).
