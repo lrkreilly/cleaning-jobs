@@ -5,10 +5,6 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 
-// Build timestamp stamped as <lastmod> on every sitemap URL so crawlers can
-// prioritise re-fetches. Static site, so all pages share the build date.
-const buildDate = new Date();
-
 // Strip developer HTML comments (<!-- ... -->) from the built pages on every build. They
 // never render but otherwise ship in the page source. Inline <script>/<style> and JSON-LD
 // blocks contain no <!-- markers, so a global strip over the .html output is safe.
@@ -44,12 +40,9 @@ export default defineConfig({
   site: 'https://cleaningjobs.co.nz',
   trailingSlash: 'ignore',
   integrations: [
-    sitemap({
-      serialize(item) {
-        item.lastmod = buildDate.toISOString();
-        return item;
-      },
-    }),
+    // No lastmod: stamping the build date on every URL every deploy carries no
+    // per-page signal. Reinstate only if it can reflect actual page changes.
+    sitemap(),
     stripHtmlComments(),
   ],
   build: {
