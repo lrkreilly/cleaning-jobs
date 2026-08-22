@@ -169,9 +169,15 @@ Done 2026-08-22: shared layout extracted (`src/layouts/BaseLayout.astro` + `src/
 duplicate city/subpage CSS consolidated; `gen-cities.mjs` retired from the workflow) · custom 404 ·
 sitemap `lastmod` removed · city title-tag cleanup · legacy 301s live, with
 `/the-benefits-of-becoming-a-cleaner/` now pointing at `/how-to-become-a-cleaner/`.
+Also done 2026-08-23 (AI-readability layer, commit `b66bf17` + spruce `28b675d`): `llms.txt`
++ auto-generated `/llms-full.txt` on every build; /about/ fact sheet + entity Q&A; FAQPage
+JSON-LD on all 12 FAQ-bearing pages, generated from the visible copy by codemod; honest
+`dateModified` stamps; `og:site_name` unified; Spruce declares `subOrganization` →
+cleaningjobs.co.nz on all 71 business nodes (reciprocal of `parentOrganization` — never
+`sameAs`).
 Still open: repoint the sprucecleaning.nz Cloudflare redirect (row 57) at
 `/how-to-become-a-cleaner/` (Luke — Cloudflare access) · when convenient: per-page OG images,
-`llms.txt`, IndexNow.
+IndexNow.
 
 ---
 
