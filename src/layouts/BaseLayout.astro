@@ -1,0 +1,184 @@
+---
+// Shared document shell: head, header, footer, sticky apply bar, nav script.
+// Extracted 2026-08-22 from the previously copy-pasted per-page markup so the
+// chrome has one source of truth. Page-specific JSON-LD goes in the "head"
+// slot; page-specific behaviour scripts go in the "scripts" slot.
+import { HEADER_LOGO, FOOTER_LOGO } from '../components/logos.js';
+
+const {
+  title,
+  description,
+  path: pagePath,
+  ogTitle = null,
+  ogDescription = null,
+  robots = 'index, follow',
+  applyHref = '/apply/',
+  ogType = 'website',
+} = Astro.props;
+
+const site = 'https://cleaningjobs.co.nz';
+const canonical = `${site}${pagePath}`;
+const isHome = pagePath === '/';
+
+// The homepage keeps its on-page anchors for Work types / FAQ; subpages link
+// the real pages (this also fixes the old drift where the homepage header
+// never linked the FAQ page).
+const navLinks = [
+  { href: '/apply/', label: 'Apply' },
+  { href: '/how-it-works/', label: 'How it works' },
+  { href: isHome ? '#types' : '/#types', label: 'Work types' },
+  { href: isHome ? '#faq' : '/faq/', label: 'FAQ' },
+  { href: '/about/', label: 'About' },
+];
+const locations = [
+  { href: '/cleaning-jobs-auckland/', label: 'Auckland' },
+  { href: '/cleaning-jobs-west-auckland/', label: 'West Auckland' },
+  { href: '/cleaning-jobs-south-auckland/', label: 'South Auckland' },
+  { href: '/cleaning-jobs-wellington/', label: 'Wellington' },
+  { href: '/cleaning-jobs-hamilton/', label: 'Hamilton' },
+  { href: '/cleaning-jobs-tauranga/', label: 'Tauranga' },
+];
+const cur = (href) => (pagePath === href ? 'page' : undefined);
+---
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content={robots} />
+  <meta name="theme-color" content="#f7f5f0" />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content="CleaningJobs" />
+  <meta property="og:locale" content="en_NZ" />
+  <meta property="og:title" content={ogTitle ?? title} />
+  <meta property="og:description" content={ogDescription ?? description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content="https://cleaningjobs.co.nz/og/home.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Cleaning Jobs NZ. Apply once, become eligible for cleaning work." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={ogTitle ?? title} />
+  <meta name="twitter:description" content={ogDescription ?? description} />
+  <meta name="twitter:image" content="https://cleaningjobs.co.nz/og/home.png" />
+  <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script is:inline type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://cleaningjobs.co.nz/#organization","name":"Cleaning Jobs","alternateName":"Cleaning Jobs NZ","url":"https://cleaningjobs.co.nz/","logo":{"@type":"ImageObject","@id":"https://cleaningjobs.co.nz/#logo","url":"https://cleaningjobs.co.nz/logo.png","width":512,"height":512},"image":{"@id":"https://cleaningjobs.co.nz/#logo"},"description":"The recruitment and onboarding arm of The Spruce Company in New Zealand. Cleaners apply once; suitable applicants complete onboarding and training to the Spruce standard and become eligible for residential and commercial work allocation.","parentOrganization":{"@type":"Organization","name":"The Spruce Company","@id":"https://sprucehome.co.nz/#business","url":"https://sprucehome.co.nz/"},"areaServed":{"@type":"Country","name":"New Zealand"},"address":{"@type":"PostalAddress","streetAddress":"Unit 54/11 Northside Drive, Westgate","addressLocality":"Auckland","postalCode":"0814","addressCountry":"NZ"},"contactPoint":{"@type":"ContactPoint","telephone":"+64-800-737-333","email":"hello@cleaningjobs.co.nz","contactType":"recruitment","areaServed":"NZ","availableLanguage":"English"}},{"@type":"WebSite","@id":"https://cleaningjobs.co.nz/#website","name":"Cleaning Jobs","alternateName":"Cleaning Jobs NZ","url":"https://cleaningjobs.co.nz/","inLanguage":"en-NZ","publisher":{"@id":"https://cleaningjobs.co.nz/#organization"}}]}
+  </script>
+  <slot name="head" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="Cleaning Jobs home"><Fragment set:html={HEADER_LOGO} /></a>
+      <nav class="nav-links" aria-label="Primary">
+        {navLinks.map((l) => <a href={l.href} aria-current={cur(l.href)}>{l.label}</a>)}
+      </nav>
+      <a class="btn btn-primary nav-cta" href={applyHref}>Apply now</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <div class="wrap">
+        {navLinks.map((l) => <a class="m-link" href={l.href} aria-current={cur(l.href)}>{l.label} <span class="arr">→</span></a>)}
+        <div class="m-apply"><a class="btn btn-primary" href={applyHref}>Apply now</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <slot />
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="brand" href="/" aria-label="Cleaning Jobs home"><Fragment set:html={FOOTER_LOGO} /></a>
+          <p class="foot-about">The recruitment and onboarding arm of The Spruce Company in New Zealand. Apply once. Suitable applicants can complete Spruce onboarding and become eligible for work allocation.</p>
+        </div>
+        <div class="foot-col">
+          <h3>Site</h3>
+          <ul>
+            <li><a href="/apply/">Apply</a></li>
+            <li><a href="/how-it-works/">How it works</a></li>
+            <li><a href="/#types">Work types</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/how-to-become-a-cleaner/">Become a cleaner</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h3>Locations</h3>
+          <ul>
+            {locations.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:hello@cleaningjobs.co.nz">hello@cleaningjobs.co.nz</a></li>
+            <li><a href="tel:+64800737333">0800 737 333</a></li>
+            <li class="addr">Unit 54/11 Northside Drive,<br />Westgate, Auckland 0814</li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/legal/#privacy">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; <span id="yr">2026</span> Cleaning Jobs · Built by <a href="https://igloostudio.co.nz" target="_blank" rel="noopener">Igloo</a></span>
+        <span>Cleaning Jobs recruits and certifies. Cleaning services are delivered through <a href="https://sprucehome.co.nz/">The Spruce Company</a>.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-apply" role="region" aria-label="Apply for cleaning work">
+    <span class="sa-text">Cleaning work, made clearer<small>Apply once. Applications reviewed.</small></span>
+    <a class="btn btn-primary" href={applyHref} aria-label="Apply now for cleaning work">Apply now</a>
+  </div>
+
+  <script is:inline>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var menu = document.getElementById('mobileMenu');
+      if (!toggle || !menu) return;
+      function setOpen(open) {
+        menu.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setOpen(false); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          setOpen(false); toggle.focus();
+        }
+      });
+      window.matchMedia('(min-width: 980px)').addEventListener('change', function (e) {
+        if (e.matches) setOpen(false);
+      });
+    })();
+  </script>
+  <slot name="scripts" />
+</body>
+</html>

@@ -1,0 +1,11 @@
+/* Article prose additions. Pages also import city.css for the shared chrome. */
+.art-meta { font-size: .85rem; color: var(--muted); margin-top: 10px; }
+.art-body { padding: 26px 0 10px; }
+.art-body .wrap-narrow { max-width: 780px; margin: 0 auto; padding: 0 22px; }
+.art-body h2 { font-size: 1.45rem; color: var(--ink); margin: 38px 0 12px; letter-spacing: -.01em; }
+.art-body p { color: var(--text); line-height: 1.75; margin: 0 0 16px; }
+.art-body ul { color: var(--text); line-height: 1.75; margin: 0 0 16px; padding-left: 22px; }
+.art-body li { margin-bottom: 6px; }
+.art-body a { color: var(--primary); font-weight: 600; }
+.art-body strong { color: var(--ink); }
+.art-note { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; margin-top: 34px; line-height: 1.6; }

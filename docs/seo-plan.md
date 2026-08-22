@@ -129,8 +129,11 @@ and Google's jobs surface does not operate in NZ; neither fact bears on normal o
 
 ## 4. Supporting pages
 
-Candidates, in order: `/cleaning-jobs-no-experience/`, `/part-time-cleaning-jobs-auckland/`,
-`/cleaning-jobs-west-auckland/`, `/cleaning-jobs-south-auckland/`.
+All four shipped 2026-08-22: `/cleaning-jobs-no-experience/`, `/part-time-cleaning-jobs-auckland/`,
+`/cleaning-jobs-west-auckland/`, `/cleaning-jobs-south-auckland/` — written strictly from
+established facts (published suburb lists, form fields, the five-stage process, sourced Tahatū
+claims); no demand or pay claims. They gain their gated blocks (local demand status, pay) when
+the §8 inputs arrive.
 
 **Gate: each page ships when it has (a) verified distinct demand and (b) genuinely unique
 information to publish** — real demand-area data, an audience-specific answer the Auckland hub
@@ -159,11 +162,13 @@ North-Star test.
 
 ## 6. Housekeeping (engineering, not strategy)
 
-Shared layout extraction before copy work at scale (ten standalone pages with pasted
-headers/footers; `gen-cities.mjs` has drifted — retire it) · custom 404 (currently Vercel's
-raw error page) · **remove sitemap `lastmod`** until it can represent actual page changes
-(`astro.config.mjs:8` stamps every URL with each build) · city title-tag cleanup · when
-convenient: per-page OG images, `llms.txt`, IndexNow.
+Done 2026-08-22: shared layout extracted (`src/layouts/BaseLayout.astro` + `src/components/logos.js`;
+duplicate city/subpage CSS consolidated; `gen-cities.mjs` retired from the workflow) · custom 404 ·
+sitemap `lastmod` removed · city title-tag cleanup · legacy 301s live, with
+`/the-benefits-of-becoming-a-cleaner/` now pointing at `/how-to-become-a-cleaner/`.
+Still open: repoint the sprucecleaning.nz Cloudflare redirect (row 57) at
+`/how-to-become-a-cleaner/` (Luke — Cloudflare access) · when convenient: per-page OG images,
+`llms.txt`, IndexNow.
 
 ---
 
