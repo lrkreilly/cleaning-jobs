@@ -34,8 +34,8 @@ SEO that routes people to a broken or overstated funnel is wasted. All items ver
 | 2 | **Empty red error banner on the form.** | `apply/index.astro:128` ships `class="form-msg error"`; `apply.css:823–824` makes `.form-msg.error` visible — an empty red box renders on load. | Remove `error` from the initial markup (JS adds it on failure), or add a `.form-msg:empty { display:none }` guard. |
 | 3 | **Unverified "Live" demand claims.** | Homepage badges all four cities "Live" (`index.astro:368`) while this plan parks three of them. | Verify each claim against actual allocated work; where "Live" cannot be substantiated, replace with truthful, dated statuses ("Applications open", "Register interest"). |
 | 4 | **Privacy notice gaps.** | `/legal/` names "Cleaning Jobs — the recruitment arm of The Spruce Company" (not the registered legal entity), does not name the email processor (Resend) while naming Vercel/Cloudflare, and keeps unsuccessful applicants' details indefinitely on an opt-out basis (`legal/index.astro:129,176,197`). The Privacy Commissioner's recruitment guidance says destroy unsuccessful applications unless prior consent to retain. | Name the actual legal entity; disclose Resend as a processor; replace indefinite retention with a defined period plus an explicit future-opportunities consent (e.g. an opt-in checkbox on the form, with automatic deletion after the stated period). |
-| 5 | **API hardening.** | `api/apply.js` has honeypot + required-field checks + 1 MB cap only. | Add strict length/type/enum validation per field, genuine consent validation, rate limiting / bot protection, delivery monitoring, and basic regression tests. |
-| 6 | **Dependency advisories.** | `npm audit --omit=dev`: 8 vulnerabilities (7 high, 1 low). postcss/svgo/vite advisories fix non-breaking via `npm audit fix`; the sharp advisory requires the Astro major upgrade. | Run `npm audit fix` now; schedule a controlled Astro upgrade with build + regression testing (exposure is reduced on a static deploy — do not force a blind major bump). |
+| 5 | **API hardening.** | Done 2026-08-22: per-field type/length caps, exact enum allowlists for every select/checkbox value, consent must equal the browser's checked value, KV-backed per-IP rate limit (atomic INCR+EXPIRE), and a 26-case handler test suite (`npm test`) with mocked Resend/KV. | Remaining: delivery monitoring via a Resend `email.delivered` webhook (the `delivered` status is reserved for it). |
+| 6 | **Dependency advisories.** | `npm audit fix` applied 2026-08-22: 8 advisories (7 high) down to 3 (1 low, 2 high). The remainder spans Astro XSS/SSRF, esbuild, and sharp/libvips advisories. | The controlled Astro 7 upgrade (with build + regression testing) resolves the remainder — scheduled work, not a forced bump. |
 | 7 | **Indexation baseline.** | Public index checks surface the homepage but not the Auckland URL (warning only). | Verify Search Console property; URL-Inspect `/cleaning-jobs-auckland/`; submit sitemap; confirm www consolidation. Establish the measurement baseline (§7) before the rebuild so movement is attributable. |
 
 **Resolved question — form action (correction to v2):** `/api/apply/` is canonical. Verified
@@ -45,12 +45,18 @@ live: `/api/apply` 308s **to** `/api/apply/`, which answers directly. The form's
 ### Application measurement (part of Step 0, feeds everything)
 
 Do not use the Resend inbox as the conversion system. Store a **first-party application
-record** with source page, referrer/UTM, and lifecycle statuses: received → delivered →
-reviewed → onboarded → allocated. Implementation guidance: write the record from
-`api/apply.js` alongside the email (a zero-ops store such as Vercel Postgres or Upstash KV;
-fail open — a store outage must never block the email send); status updates can start as a
-manual weekly pass. This record is also the raw material for the Pay & Demand Report (§5) and
-the outcome numbers on the Auckland page (§2).
+record** with source attribution and lifecycle statuses: received → email_accepted →
+reviewed → onboarded → allocated (`delivered` is reserved for an authenticated Resend
+delivery webhook — Resend's success response only means the message was accepted for
+sending). Implemented 2026-08-22 in `api/apply.js`: records persist `received` **before**
+the send, carry the Resend email id, expire on a retention TTL with atomic writes and index
+pruning, and stamp the storage outcome into the notification email so gaps are loud.
+Source capture is allowlisted (`from`/`utm_source`/`utm_medium`/`utm_campaign` + referrer
+path only). **Activation is deliberately double-gated**: recording starts only when both
+the KV store env AND `APP_RECORD_TTL_DAYS` are set — the retention decision must precede
+any stored personal data. Operate records with `scripts/app-records.mjs`
+(list/get/status/delete). This record is the raw material for the Pay & Demand Report (§5)
+and the outcome numbers on the Auckland page (§2).
 
 Also: pass context into `/apply/` — preselect the region from the referring city page
 (`/apply/?from=auckland`), and retain landing page, referrer, and UTM data in hidden fields.

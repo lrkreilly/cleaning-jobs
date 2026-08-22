@@ -360,11 +360,24 @@ import '../../styles/apply.css';
       var btn = document.getElementById('applySubmit');
       function showError(msg) { err.classList.add('error'); err.textContent = msg; err.style.display = 'block'; err.scrollIntoView({behavior:'smooth', block:'center'}); }
 
-      // Source attribution for the first-party application record.
+      // Source attribution for the first-party application record. Deliberately
+      // minimal: referrer origin+path only (no query), and an allowlist of campaign
+      // params — arbitrary query strings can carry identifiers or tokens.
       var refField = document.getElementById('sourceReferrer');
       var paramsField = document.getElementById('sourceParams');
-      if (refField) refField.value = (document.referrer || '').slice(0, 500);
-      if (paramsField) paramsField.value = (location.search || '').slice(0, 500);
+      if (refField && document.referrer) {
+        try { var u = new URL(document.referrer); refField.value = (u.origin + u.pathname).slice(0, 300); } catch (e) {}
+      }
+      if (paramsField) {
+        var sp = new URLSearchParams(location.search);
+        var keep = ['from', 'utm_source', 'utm_medium', 'utm_campaign'];
+        var out = [];
+        for (var k = 0; k < keep.length; k++) {
+          var v = sp.get(keep[k]);
+          if (v) out.push(keep[k] + '=' + v.slice(0, 100));
+        }
+        paramsField.value = out.join('&').slice(0, 400);
+      }
 
       // Preselect the region when the visitor arrived from a city page (?from= or referrer).
       var regionSelect = document.getElementById('region');
