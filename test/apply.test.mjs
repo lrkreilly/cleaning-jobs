@@ -31,7 +31,7 @@ function validPayload(overrides = {}) {
     region: 'Auckland',
     right_to_work: 'I’m a NZ citizen or resident',
     experience: 'None yet',
-    transport: 'Public transport only',
+    transport: 'I have my own vehicle',
     availability: 'Flexible',
     applying_as: 'An individual',
     consent: 'on',
@@ -106,6 +106,10 @@ const invalidCases = [
   ['invented right_to_work', { right_to_work: 'Sponsorship please' }],
   ['invented experience', { experience: 'Decades' }],
   ['invented transport', { transport: 'Helicopter' }],
+  // A car is now a hard requirement (2026-08-23) — the old form values must no
+  // longer validate, even though they were legitimate options before that date.
+  ['transport: retired "Public transport only" value', { transport: 'Public transport only' }],
+  ['transport: retired "Not at the moment" value', { transport: 'Not at the moment' }],
   ['invented availability', { availability: 'Never' }],
   ['invented applying_as', { applying_as: 'A franchise' }],
   ['empty work_types', { work_types: [] }],

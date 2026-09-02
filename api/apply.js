@@ -26,7 +26,7 @@ const FIELDS = [
   ['region', 'Region'],
   ['right_to_work', 'Right to work in NZ'],
   ['experience', 'Cleaning experience'],
-  ['transport', 'Transport'],
+  ['transport', 'Own vehicle'],
   ['work_types', 'Work types'],
   ['availability', 'Availability'],
   ['applying_as', 'Applying as'],
@@ -47,7 +47,8 @@ const ENUMS = {
   region: ['Northland', 'Auckland', 'Waikato', 'Bay of Plenty', 'Gisborne', 'Hawke’s Bay', 'Taranaki', 'Manawatū-Whanganui', 'Wellington', 'Tasman', 'Nelson', 'Marlborough', 'West Coast', 'Canterbury', 'Otago', 'Southland'],
   right_to_work: ['I’m a NZ citizen or resident', 'I have a valid NZ work visa', 'Not yet', 'Not sure'],
   experience: ['None yet', 'Less than 1 year', '1 to 3 years', '3+ years'],
-  transport: ['I have my own transport', 'Public transport only', 'Not at the moment'],
+  // A car is a hard requirement (2026-08-23): only value the form can produce.
+  transport: ['I have my own vehicle'],
   availability: ['Flexible', 'Weekdays', 'Weekends', 'Mornings', 'Evenings'],
   applying_as: ['An individual', 'A small team', 'A cleaning partnership'],
 };
