@@ -138,6 +138,13 @@ established facts (published suburb lists, form fields, the five-stage process, 
 claims); no demand or pay claims. They gain their gated blocks (local demand status, pay) when
 the §8 inputs arrive.
 
+**Auckland sub-region set extended 2026-08-23**: `/cleaning-jobs-north-shore/` and
+`/cleaning-jobs-central-auckland/` shipped, completing four of the five sub-regions the Auckland
+hub itself names (Central+isthmus, North Shore, West, South, East+Howick). Same rules as above.
+**East Auckland and Howick is the one remaining named sub-region without a page** — natural next
+addition, same template, same suburb-sourcing discipline (Spruce's published `cities.js` groups
+only).
+
 **Gate: each page ships when it has (a) verified distinct demand and (b) genuinely unique
 information to publish** — real demand-area data, an audience-specific answer the Auckland hub
 does not already give. Not gated solely on the hub's ranking (a hard top-20 gate could block
