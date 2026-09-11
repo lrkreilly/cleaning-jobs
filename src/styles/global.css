@@ -843,3 +843,14 @@
   .city-list a { grid-template-columns: 1fr auto auto; grid-template-areas: "name meta status"; gap: 24px; align-items: center; padding: 22px 8px; }
   .city-meta { align-self: center; }
 }
+
+/* ---------- Wide screens ----------
+   At 3440x1440 the 1180px column was 34% content and 66% empty background.
+   It steps up past 1500px; everything below that is unchanged. The hero and
+   section grids are already fluid, so only the column moves.
+   Each page type loads exactly one of these stylesheets and each carries its
+   own --maxw, so this block has to live in all of them or only the page types
+   that happen to load global.css would scale. ---------- */
+@media (min-width:1500px){ :root{ --maxw:1340px; } }
+@media (min-width:1920px){ :root{ --maxw:1480px; } }
+@media (min-width:2560px){ :root{ --maxw:1640px; } }
