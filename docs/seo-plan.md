@@ -118,7 +118,7 @@ formulas, no word-count targets.
    referring domains per quarter). Parameters set with Luke at kick-off.
 3. **Legacy redirect recovery**: repoint Cloudflare row 57
    (`sprucecleaning.nz/how-to-become-a-cleaner/`, currently landing on an empty articles hub)
-   at a rebuilt support article here; add `vercel.json` 301s for this domain's own indexed
+   at a rebuilt support article here; add redirects in `worker/index.js` for this domain's own indexed
    legacy URLs (`/about-cleaning-jobs/` → `/about/`, `/the-benefits-of-becoming-a-cleaner/` →
    the support article once live).
 
@@ -204,7 +204,7 @@ IndexNow.
 
 | # | Input | Feeds |
 |---|---|---|
-| 0 | Vercel env config (`RESEND_API_KEY`, `APPLY_FROM`, `APPLY_TO`) + Resend domain verification — Luke, credentials | Step 0.1 |
+| 0 | Worker secrets (`RESEND_API_KEY`, `APPLY_FROM`, `APPLY_TO`; `npx wrangler secret put`) + Resend domain verification — Luke, credentials | Step 0.1 |
 | 1 | Current intake/demand status + who keeps it current. (W/H/T serviceability confirmed by Luke 2026-08-23; Christchurch timing still open.) | Intake block |
 | 2 | Publishable rates/ranges, or the truthful rate-setting explanation | Pay block, report |
 | 3 | Hours and schedule patterns actually allocated | Hours block |

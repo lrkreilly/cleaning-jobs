@@ -5,7 +5,7 @@ suitable applicants complete Spruce certification and become eligible for reside
 and commercial work allocation.
 
 - **Domain:** cleaningjobs.co.nz
-- **Stack:** Astro (static) → GitHub → Vercel
+- **Stack:** Astro (static) → GitHub; served by a Cloudflare Worker. Publish by pushing to `main`, then `npm run deploy` (`docs/cloudflare-setup.md`)
 - **Source mockup:** `Downloads/cleaningjobs-home_3_1.html` (ported pixel-for-pixel)
 
 ## Develop
