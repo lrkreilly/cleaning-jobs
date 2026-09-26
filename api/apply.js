@@ -1,8 +1,8 @@
-// Vercel serverless function: receives an application, records it, and emails it via Resend.
-// Static Astro site + a top-level /api function = Vercel deploys this at /api/apply
-// (canonical URL is /api/apply/ under "trailingSlash": true — the form posts there directly).
-// The Resend API key is read from the RESEND_API_KEY env var (set in Vercel),
-// never committed. Configure the from/to via env with sensible fallbacks.
+// Vercel-style function, run by the Cloudflare Worker through worker/vercel-function.js: receives
+// an application, records it, and emails it via Resend. The Worker serves it at /api/apply/, the
+// canonical URL (the form posts there directly).
+// The Resend API key is read from RESEND_API_KEY, a Worker secret (docs/cloudflare-setup.md),
+// never committed. Configure the from/to the same way, with sensible fallbacks.
 //
 // First-party application record + rate limiting use an Upstash-compatible Redis REST
 // store (Vercel KV / Upstash): KV_REST_API_URL + KV_REST_API_TOKEN (or the UPSTASH_* pair).
