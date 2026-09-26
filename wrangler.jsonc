@@ -22,5 +22,11 @@
     // Every request goes through worker/index.js, which handles the redirects, the form function
     // and the headers.
     "run_worker_first": true
-  }
+  },
+  // Custom Domains: Cloudflare manages their DNS records and certificates. A deploy replaces the
+  // Worker's whole list of Custom Domains with this one.
+  "routes": [
+    { "pattern": "cleaningjobs.co.nz", "custom_domain": true },
+    { "pattern": "www.cleaningjobs.co.nz", "custom_domain": true }
+  ]
 }
