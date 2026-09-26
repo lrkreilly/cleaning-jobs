@@ -10,13 +10,16 @@
     "build": "astro build",
     "preview": "astro preview",
     "test": "node --test",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && wrangler deploy",
+    "compare:hosts": "node scripts/compare-hosts.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.3.0",
     "astro": "^5.6.1"
   },
   "devDependencies": {
-    "@resvg/resvg-js": "^2.6.2"
+    "@resvg/resvg-js": "^2.6.2",
+    "wrangler": "4.139.0"
   }
 }
