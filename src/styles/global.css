@@ -854,3 +854,7 @@
 @media (min-width:1500px){ :root{ --maxw:1340px; } }
 @media (min-width:1920px){ :root{ --maxw:1480px; } }
 @media (min-width:2560px){ :root{ --maxw:1640px; } }
+
+/* Website and software credits, aligned with the footer legal row. */
+.footer-credits{display:flex;flex-wrap:wrap;align-items:center;gap:6px 20px;font-size:13px;line-height:1.7;margin-left:auto}.footer-credits span{white-space:nowrap}.footer-credits a{color:inherit;text-decoration:underline;text-underline-offset:3px}.footer-credits a:focus-visible{outline:2px solid currentColor;outline-offset:4px}.foot-company-note{flex-basis:100%}
+@media(max-width:760px){.footer-credits{margin-left:0;justify-content:flex-start}}

@@ -1,0 +1,6 @@
+{
+  "status": "checked-awaiting-publication-approval",
+  "change": "Add 13px Igloo and Crayon credits, replacing Built by Crayon",
+  "checks": "Production build, generated footer links, desktop/mobile browser checks passed",
+  "screenshot": "footer-refinement-desktop-20261110.png"
+}
