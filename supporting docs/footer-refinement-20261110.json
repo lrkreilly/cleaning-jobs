@@ -1,6 +1,16 @@
 {
-  "status": "checked-awaiting-publication-approval",
+  "status": "live-and-verified",
   "change": "Add 13px Igloo and Crayon credits, replacing Built by Crayon",
   "checks": "Production build, generated footer links, desktop/mobile browser checks passed",
-  "screenshot": "footer-refinement-desktop-20261110.png"
+  "screenshot": "footer-refinement-desktop-20261110.png",
+  "source": "8dc35400448be9fb3fd84222ff173dff76dccaa8",
+  "workerVersion": "0d16ee95-be80-43cc-8db3-6436a52bfb78",
+  "artifactSHA256": "57ce28d7f10a2132f1d7cf2d4fe1050eba7f10142e0555bdc44f616111835ce6",
+  "verification": {
+    "files": 53,
+    "reviewPages": 0,
+    "failures": []
+  },
+  "bindingsPreserved": true,
+  "domainsPreserved": true
 }

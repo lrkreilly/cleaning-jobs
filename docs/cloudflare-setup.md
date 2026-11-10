@@ -35,3 +35,7 @@ Wrangler must be logged in (`npx wrangler login`) to the account that owns the W
 - On the test hostname `cf-check.cleaningjobs.co.nz`, the comparison with Vercel's copy found 0 problems in 93 checks, and the form endpoint gave Vercel's answers to the same requests.
 - Codex deleted the apex and `www` CNAMEs to Vercel, keeping screenshots of them as the rollback record. The records were gone by 13:57:24 NZST and the Custom Domains were attached at 13:58:03. A 95-check comparison against Vercel's copy found 0 problems, the live form gave Vercel's answers, and 8 of 8 outside networks loaded the site.
 - Vercel is retired. The same day the project was disconnected from GitHub, so it no longer builds `main`, and `vercel.json` was removed; Luke deletes the project, which also detaches its domains. Cloudflare is the only host. Going back to Vercel would mean importing the repository into Vercel again and re-adding the domains.
+
+## Footer refinement — 10 November 2026
+
+Add 13px Igloo and Crayon credits, replacing Built by Crayon. Live source `8dc35400`, Worker `0d16ee95-be80-43cc-8db3-6436a52bfb78`. Build, desktop/mobile, footer links and exact public artifact checks passed. Existing domains and bindings preserved; no DNS or mail-setting changes. [Release and screenshot](<../supporting docs/footer-refinement-20261110.json>).
