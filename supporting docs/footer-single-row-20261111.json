@@ -1,0 +1,40 @@
+{
+  "status": "checked-awaiting-publication-approval",
+  "change": "Remove Cleaning Jobs recruits and certifies. Keep remaining delivery statement and all footer credits on one desktop row, wrapping on mobile.",
+  "build": {
+    "status": "passed",
+    "footers": 17
+  },
+  "responsive": {
+    "desktop": {
+      "children": [
+        {
+          "height": 20.796875,
+          "left": 66.5,
+          "right": 188.2890625,
+          "top": 670.328125
+        },
+        {
+          "height": 20.796875,
+          "left": 212.2890625,
+          "right": 557.1484375,
+          "top": 670.328125
+        },
+        {
+          "height": 22.09375,
+          "left": 909.515625,
+          "right": 1198.5,
+          "top": 669.6796875
+        }
+      ],
+      "overflow": false
+    },
+    "mobile": {
+      "creditRight": 308.984375,
+      "overflow": false,
+      "removed": true,
+      "viewport": 390
+    }
+  },
+  "resourceNote": "Small single-site build requeued with 1536 MiB estimate; machine-wide 1024 MiB spare-memory guard preserved."
+}
