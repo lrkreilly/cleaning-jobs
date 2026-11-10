@@ -1,5 +1,5 @@
 {
-  "status": "checked-awaiting-publication-approval",
+  "status": "live-and-verified",
   "change": "Remove Cleaning Jobs recruits and certifies. Keep remaining delivery statement and all footer credits on one desktop row, wrapping on mobile.",
   "build": {
     "status": "passed",
@@ -36,5 +36,28 @@
       "viewport": 390
     }
   },
-  "resourceNote": "Small single-site build requeued with 1536 MiB estimate; machine-wide 1024 MiB spare-memory guard preserved."
+  "resourceNote": "Small single-site build requeued with 1536 MiB estimate; machine-wide 1024 MiB spare-memory guard preserved.",
+  "source": "82ad7a8ff4a1857b1e4d14676a2624e9ae79a58f",
+  "workerVersion": "641c2c17-f504-4bbc-a02b-27d4ddf3485f",
+  "artifactSHA256": "99287420e6807ded1d795e2c7dff4b27e00da5e6b696d1dfa992a6ab1e09820d",
+  "verification": {
+    "files": 53,
+    "reviewPages": 0,
+    "failures": []
+  },
+  "bindingsPreserved": true,
+  "domainsPreserved": true,
+  "verificationHistory": {
+    "initialFailures": [
+      {
+        "route": "/about/",
+        "error": "Published bytes differ /about/\n+ actual - expected\n\n+ '7ed36b6c80b4b8f6ff3ad295e61f45187a36ade5ece394023e1bbd9b20f0d2c8'\n- 'ee7d1f41488d735af7a8afdf653b8e37f38fb615e2099b39b48edadf39ff0749'\n"
+      },
+      {
+        "route": "/faq/",
+        "error": "Published bytes differ /faq/\n+ actual - expected\n\n+ '4e3c30e937dc82b06481ec993812236c4fecc3eff2ab1856690a61ca62e86716'\n- 'c1ebc597c936b45ec6234cfa6c5a9bb115c2eb7ee3681c331e81bbc4f825040a'\n"
+      }
+    ],
+    "resolution": "Two just-deployed HTML pages initially returned older bytes; fresh reads and the full rerun matched without redeployment."
+  }
 }

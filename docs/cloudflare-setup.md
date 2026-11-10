@@ -39,3 +39,7 @@ Wrangler must be logged in (`npx wrangler login`) to the account that owns the W
 ## Footer refinement — 10 November 2026
 
 Add 13px Igloo and Crayon credits, replacing Built by Crayon. Live source `8dc35400`, Worker `0d16ee95-be80-43cc-8db3-6436a52bfb78`. Build, desktop/mobile, footer links and exact public artifact checks passed. Existing domains and bindings preserved; no DNS or mail-setting changes. [Release and screenshot](<../supporting docs/footer-refinement-20261110.json>).
+
+## Single-row footer — 11 November 2026
+
+Removed “Cleaning Jobs recruits and certifies.” The remaining delivery statement, copyright and existing 13px website/software credits share one desktop row and wrap on mobile. Live source `82ad7a8f`, Worker `641c2c17-f504-4bbc-a02b-27d4ddf3485f`. Build, all 17 footer checks, desktop/mobile and exact public artifact verification passed. Bindings and domains preserved. [Release record and screenshot](<../supporting docs/footer-single-row-20261111.json>).
